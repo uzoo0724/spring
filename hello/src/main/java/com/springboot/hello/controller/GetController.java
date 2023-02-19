@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.springboot.hello.dto.MemberDto;
+
 @RestController
 @RequestMapping("/api/v1/get-api")
 public class GetController {
@@ -57,5 +59,12 @@ public class GetController {
 		
 		return sb.toString();
 	}
+	
+	// 4-2. RequestParam 구현 -> MemberDto 적용
+		@GetMapping(value="/request3")
+		public String getRequestParam3(MemberDto memberDto) {
+			return memberDto.toString();
+		}
+
 
 }
